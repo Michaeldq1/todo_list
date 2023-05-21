@@ -1,0 +1,276 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  caret-color: transparent;
+}
+
+/* Layout */
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  gap: 20px;
+  font-size: 30px;
+}
+
+#main-container {
+  flex: 6;
+  display: flex;
+  margin-top: 100px;
+}
+
+#left-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#left-container > div {
+  display: flex;
+  gap: 10px;
+  height: 50px;
+  width: 50%;
+  font-size: 35px;
+  align-items: flex-start;
+}
+
+#right-container {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#add-task {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+footer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Buttons */
+#alltasks,
+#todaystasks,
+#weeklytasks,
+#projects,
+.task-completed,
+.material-symbols-outlined {
+  cursor: pointer;
+}
+
+.material-symbols-outlined:hover,
+#alltasks:hover,
+#todaystasks:hover,
+#weeklytasks:hover,
+#projects:hover {
+  color: green;
+}
+
+/* Task Container */
+#task-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  gap: 5px;
+}
+
+.task {
+  display: flex;
+  height: 30px;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "\2714";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: green;
+}
+
+.task-title {
+  width: 50%;
+}
+
+.task-date {
+  font-size: 12px;
+}
+
+.task-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.task-note,
+.task-edit {
+  font-size: 27px;
+}
+
+.task-note-drawer {
+  display: none;
+  height: 58px;
+  border: 2px solid black;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  align-items: center;
+  padding: 5px;
+}
+
+.task-complete {
+  background-color: #d3d3d3 !important;
+  color: white;
+}
+
+.task-delete {
+  font-size: 27px;
+}
+
+.task-delete:hover {
+  color: red;
+}
+
+/* Styling */
+#right-container span {
+  align-self: flex-end;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  font-size: 35px;
+}
+
+.task-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.task-modal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 15rem;
+  border-radius: 0.5rem;
+}
+
+.task-modal-container h1 {
+  text-align: center;
+}
+
+.task-modal-container input,
+.task-modal-container select,
+.task-modal-container button {
+  height: 25px;
+  width: 200px;
+  align-self: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+  position: absolute;
+  align-self: flex-end;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid black;
+  height: 45px;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 30px;
+  border-bottom: none;
+}
+
+.project-percent-complete {
+  font-size: 25px;
+}
+
+.project-task-container {
+  height: 20px;
+}
+
+/* Miscellaneous */
+.selected {
+  color: green;
+}
+
+.failed-input {
+  border: 2px solid red;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
